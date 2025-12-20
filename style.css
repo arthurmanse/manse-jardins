@@ -1,0 +1,575 @@
+
+/* RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* S T Y L E */
+
+@font-face {
+  font-family: 'crucial'; 
+  src: url('./fonts/Crucial-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+    --cor-padrao: #f3f3f3;
+    --cor-secund: #032E15;
+    --font-padrao: serif;
+    --font-crucial: 'crUcial', serif; 
+    --font-katibeh: 'Katibeh', serif; 
+    --font-lato: 'Lato', serif;
+}
+
+/* F U N D O / B O D Y */
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-padrao);
+    color: var(--cor-padrao);
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0; 
+}
+
+.fundo {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -10; 
+    inset: 0;
+}
+
+.fundo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.camadaFundo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    
+    background-image: linear-gradient(
+        to top,
+        rgba(3, 46, 21, 0.9), rgba(03, 46, 21, 0.55)
+    );
+}
+
+/* H E A D E R */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5rem 1rem 5rem;
+}
+
+.logo {
+    display: flex; 
+}
+
+.logo img {
+    width: 6.7rem;  
+    height: 6.7rem;
+    margin: 1rem 1.5rem 0 0; 
+}
+
+.logo h1 {
+    font-size: 6rem;       
+    font-family: var(--font-crucial);
+}
+
+.logo h2 {
+    color: var(--cor-padrao);      
+    font-size: 1.725rem;            
+    font-family: var(--font-crucial);          
+}
+
+.cidade {
+  font-family: var(--font-katibeh);
+  font-size: 1.2rem;
+  transition: opacity 200ms ease, transform 200ms ease;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.clima {
+    display: flex;                
+    flex-direction: row;          
+    align-items: flex-start;      
+    gap: 0.75rem;                
+    margin-top: 1.5rem;          
+    font-family: var(--font-katibeh);
+    color: var(--cor-padrao);     
+    font-size: 1.5rem;       
+}
+
+.clima img {
+    width: 1.5rem; 
+    height: 1.5rem;
+    margin-top: 0.17rem;
+}
+
+/* M A I N */
+
+main {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem 5rem;
+  gap: 5rem;
+  position: relative;
+  height: 100%;
+  align-items: stretch;
+}
+
+.menu {
+  flex: 2 1 0%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  position: relative;
+  max-height: 100%;
+  max-width: 70rem;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  position: relative;
+}
+
+.linha {
+  background: var(--cor-padrao);
+  height: 0.125rem;
+  width: 100%;
+  display: block;
+  opacity: 0.75;
+}
+
+.titulos {
+  font-family: var(--font-crucial);
+  font-size: 1.5rem;
+}
+
+.expande {
+  transition: background-color 200ms ease-in-out;
+  height: 4rem;
+  position: relative;
+  margin-top: auto;
+}
+
+.kopf {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.2rem 1.75rem;
+  position: relative;
+  outline: none;
+}
+
+.eixo {
+  display: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu:has(.expande:focus-within) .cidade {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.content {
+  background-color: transparent;
+  color: var(--cor-padrao);
+  font-size: 0.8rem;
+  font-family: var(--font-lato); 
+  letter-spacing: 0.05rem;
+  line-height: 1.3rem; 
+  width: 80%;
+  padding: 1rem 1rem 1rem 2rem;
+  font-weight: 300;
+  overflow-y: hidden;
+  text-align: justify;
+  margin: 0 auto;
+  padding-bottom: 0.5rem;
+
+  max-height: 0;
+
+  opacity: 0;
+  transform: translateY(10px) scaleY(0.95);
+  transform-origin: bottom;
+
+  transition:
+    max-height 300ms ease,
+    opacity 200ms ease,
+    transform 300ms ease;
+}
+
+#serviços > p {
+  text-indent: 1.25rem;
+}
+
+#contato > p {
+  font-size: 1rem;
+}
+
+.expande:focus {
+  height: 100%;
+  outline: none;
+}
+
+.expande:focus .content,
+.expande:focus-within .content {
+  max-height: 100vh; 
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.expande:not(:focus):not(:focus-within):hover {
+  background-color: var(--cor-padrao);
+  color: var(--cor-secund);
+  cursor: pointer;
+  outline: none;
+}
+
+.icone-wrap {
+  position: relative;
+  line-height: 1;
+}
+
+.icone_mais {
+  position: absolute;
+  font-weight: 900;
+  text-shadow: 
+    0.05rem 0.05rem 0 var(--cor-padrao),
+    -0.05rem -0.05rem 0 var(--cor-padrao),
+    0.05rem -0.05rem 0 var(--cor-padrao),
+    -0.05rem 0.05rem 0 var(--cor-padrao);
+  font-style: sans-serif;
+  font-size: 1.875rem;
+  user-select: none;
+  position: absolute;
+  line-height: 1;
+  transition: transform 200ms ease-in-out, opacity 200ms ease-in-out;
+}
+
+.icone_seta {
+  position: relative;
+  right: 0.4rem;
+  bottom: 0.2rem;
+  font-size: 1.6rem;
+  opacity: 0;
+  transform: rotate(-90deg);
+  line-height: 1;
+  transition: transform 400ms ease-in-out, opacity 200ms ease-in-out;
+}
+
+.expande:hover .icone_mais {
+    text-shadow: 
+    0.065rem 0.065rem 0 var(--cor-secund),
+    -0.065rem -0.065rem 0 var(--cor-secund),
+    0.065rem -0.065rem 0 var(--cor-secund),
+    -0.065rem 0.065rem 0 var(--cor-secund);
+}
+
+.expande:focus .icone_mais {
+  text-shadow: 
+    0.065rem 0.065rem 0 var(--cor-secund),
+    -0.065rem -0.065rem 0 var(--cor-secund),
+    0.065rem -0.065rem 0 var(--cor-secund),
+    -0.065rem 0.065rem 0 var(--cor-secund);
+    transform: rotate(90deg);
+    opacity: 0;
+}
+
+.expande:focus .icone_seta {
+  transform: rotate(0deg);
+  opacity: 1;
+  cursor: pointer;
+}
+
+#contato {
+  text-align: center;
+  margin: auto;
+}
+
+#contato > p {
+  padding-bottom: 1rem;
+}
+
+.contatos {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  padding-top: 0.5rem;
+}
+
+.contato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.75rem;
+
+  cursor: pointer;
+}
+
+.contato img {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 0.25rem;
+}
+
+/* equivalente ao animated-underline */
+.animated-underline {
+  position: relative;
+}
+
+.animated-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 0.15rem;
+  background-color: currentColor;
+  transition: width 200ms ease;
+}
+
+.animated-underline:hover::after,
+.animated-underline:focus-visible::after {
+  width: 100%;
+}
+
+
+/* INFOS */
+
+.info {
+  flex: 1 1 0%;
+  width: 100%;
+  height: 100%;
+}
+
+.info div h2, .info div div {
+  margin: 1.25rem 1.75rem;
+}
+
+/* GLASSMORPHISM */
+
+.glass {
+  background-image: linear-gradient(135deg, rgba(250, 250, 250, 0.02), rgba(122, 122, 122, 0.08));
+
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+
+  border: 0.5px solid rgba(236, 236, 236, 0.1);
+
+  box-shadow:
+    inset -20px -20px 50px rgba(241, 241, 241, 0.02),
+    10px 10px 30px rgba(15, 15, 15, 0.25);
+  overflow: hidden;
+  background-clip: padding-box; 
+}
+
+.glass-border01 {
+  border-radius: 0.25rem 2rem;
+}
+
+.glass-border02 {
+  border-radius: 2rem 0.25rem;
+}
+
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('./img/glass-texture.jpg');
+  background-repeat: repeat;
+  opacity: 0.125;
+  pointer-events: none;
+
+}
+
+.glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(100,100,100,0.0),
+    rgba(160, 160, 160, 0.05)
+  );
+  pointer-events: none;
+}
+
+.info h2 {
+  font-size: 1.875rem;
+  font-family: var(--font-katibeh);
+  margin-bottom: 2rem;
+}
+
+.info div p {
+  text-align: justify;
+  font-family: var(--font-lato);
+  font-weight: 300;
+  font-size: 0.8rem;
+  text-indent: 2rem;
+  word-spacing: 0.05em;
+  line-height: 1.375rem;
+  margin-bottom: 0.4rem;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  flex-grow: 1;
+  position: relative;
+}
+
+footer p {
+  font-family: var(--font-lato);
+  font-weight: 300;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 1340px) {
+  footer {
+    align-content: flex-end;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  body {
+    overflow-y: scroll;
+  }
+}
+
+@media (max-width: 930px) {
+  
+  body {
+    padding: 0 3rem;
+  }
+  
+  header {
+    flex-direction: column-reverse;
+    align-items: start;
+    padding: 0 5rem 0 0rem;
+  }
+
+  .clima {
+    margin-bottom: 1.5rem;
+    place-self: end;
+    font-size: 1.2rem;
+  }
+
+  .clima img {
+    width: 1.2rem; 
+    height: 1.2rem; 
+    margin-top: 0.2rem; 
+  }
+  
+  main {
+    flex-direction: column-reverse;
+    gap: 5rem;
+    padding: 3rem 5rem 3rem 0rem;
+  }
+
+  .menu {
+    flex-direction: column-reverse;
+  }
+
+  .cidade {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+
+  header {
+      padding: 0 5rem 0 0rem;
+  }
+
+  .logo img {
+    width: 4.2rem;  
+    height: 4.2rem;
+    margin: 1rem 0.8rem 0 0; 
+  }
+
+  .logo h1 {
+    font-size: 4rem;  
+  }
+
+  .logo h2 {
+    font-size: 1.15rem;
+  }
+
+  .content {
+    padding: 1rem 2rem;
+  }
+
+}
