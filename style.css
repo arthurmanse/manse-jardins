@@ -406,6 +406,18 @@ main {
   width: 100%;
 }
 
+.expande:focus-within .content a {
+  pointer-events: auto;
+  outline: none;
+}
+
+.expande:focus-within .content a:focus {
+  outline: none;
+}
+
+.expande .content a {
+  pointer-events: auto;
+}
 
 /* INFOS */
 
@@ -534,7 +546,7 @@ footer p {
   .clima img {
     width: 1rem; 
     height: 1rem;
-    top: -0.2rem;
+    top: -0.25rem;
   }
   
   main {
@@ -579,6 +591,10 @@ footer p {
   .content {
     padding: 1rem 2rem;
     text-align: start;
+  }
+
+  footer {
+    padding-right: 2rem;
   }
 
 }

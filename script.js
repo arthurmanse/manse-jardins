@@ -1,3 +1,7 @@
+window.onload = function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+};
+
 async function loadWeather() {
     try {
   
@@ -80,11 +84,21 @@ setInterval(loadWeather, 300000);
 
 const headers = document.querySelectorAll('.expande');
 const fundo = document.querySelector('.fundo');
-const setas = document.querySelectorAll('.icone_seta');
+const setas = document.querySelectorAll('.expansivel');
+const links = document.querySelectorAll('.expande a');
 
+// 1. Fecha ao clicar na seta
 setas.forEach(seta => {
   seta.addEventListener('click', e => {
     e.stopPropagation();
     fundo.focus();
+  });
+});
+
+
+document.querySelectorAll('.expande a').forEach(link => {
+  link.addEventListener('mousedown', e => {
+    e.preventDefault();
+    window.open(link.href, link.target || '_self');
   });
 });
