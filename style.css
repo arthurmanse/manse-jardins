@@ -488,6 +488,7 @@ footer {
   align-content: center;
   flex-grow: 1;
   position: relative;
+  margin-bottom: 1rem;
 }
 
 footer p {
@@ -512,7 +513,8 @@ footer p {
 @media (max-width: 930px) {
   
   body {
-    padding: 0 3rem;
+    padding: 0 2rem 0 1rem;
+    overflow-x: hidden;
   }
   
   header {
@@ -528,8 +530,8 @@ footer p {
   }
 
   .clima img {
-    width: 1.2rem; 
-    height: 1.2rem; 
+    width: 1rem; 
+    height: 1rem; 
     margin-top: 0.2rem; 
   }
   
