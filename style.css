@@ -69,7 +69,7 @@ body {
     flex-direction: column;
     font-family: var(--font-padrao);
     color: var(--cor-padrao);
-    width: 100vw;
+    width: 100dvw;
     min-height: 100vh;
     height: 100%;
     overflow-x: hidden;
@@ -515,7 +515,7 @@ footer p {
 @media (max-width: 930px) {
   
   body {
-    padding: 0 2rem 0 3rem;
+    padding: 0 2rem 0 2rem;
     overflow-x: hidden;
   }
   
@@ -538,7 +538,7 @@ footer p {
   
   main {
     flex-direction: column-reverse;
-    gap: 5rem;
+    gap: 5vw;
     padding: 3rem 5rem 3rem 0rem;
   }
 
@@ -552,6 +552,10 @@ footer p {
 }
 
 @media (max-width: 576px) {
+
+  body {
+    overflow-x: hidden;
+  }
 
   header {
       padding: 0 5rem 0 0rem;
