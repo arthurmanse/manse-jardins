@@ -356,7 +356,13 @@ main {
 }
 
 #contato > p {
-  padding-bottom: 1rem;
+  font-size: 1rem;
+  padding-bottom: 0.3rem;
+}
+
+#contato > .cnpj {
+  font-size: 0.6rem;
+  padding-top: 0.5rem;
 }
 
 .contatos {
@@ -374,15 +380,13 @@ main {
 
   text-decoration: none;
   color: inherit;
-  font-size: 0.75rem;
 
   cursor: pointer;
 }
 
 .contato img {
-  width: 2.75rem;
-  height: 2.75rem;
-  margin-bottom: 0.25rem;
+  width: 2.3rem;
+  height: 2.3rem;
 }
 
 /* equivalente ao animated-underline */
