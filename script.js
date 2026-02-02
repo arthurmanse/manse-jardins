@@ -70,6 +70,7 @@ async function loadWeather() {
   const icon = isDay ? iconClima[condicao].day : iconClima[condicao].night;
 
   document.getElementById("imagemClima").src = icon;
+  console.log(condicao);
 
   } catch (error) {
       console.error("Erro ao carregar dados do clima:", error);
