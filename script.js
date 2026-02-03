@@ -40,7 +40,7 @@ async function loadWeather() {
   const iconClima = {
     Clear: {
       day: "./img/clima/sun.png",
-      night: "./img/clima/moon.png"
+      night: "./img/clima/lua-clear.png"
     },
     Clouds: {
       day: "./img/clima/dia-nublado.png",
