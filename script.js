@@ -23,9 +23,6 @@ async function loadWeather() {
 
 // TEMPERATURA
 
-  const API_KEY = "ff54cdc13d1bf57ebe1d84b71cb8b896";
-  const CITY = "João Pessoa,BR";
-
   const url = 
         "/api/weather";
 
