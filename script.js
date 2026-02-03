@@ -27,7 +27,7 @@ async function loadWeather() {
   const CITY = "João Pessoa,BR";
 
   const url = 
-        `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(CITY)}&appid=${API_KEY}&units=metric&lang=pt_br`;
+        "/api/weather";
 
   const response = await fetch(url);
   const data = await response.json();
