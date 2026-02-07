@@ -58,7 +58,7 @@ async function loadWeather() {
   const porSol = data.sys.sunset;
 
   const isDay = agora >= nascerSol && agora < porSol;
-  const condicao = data.weather[0].main;
+  let condicao = data.weather[0].main;
 
   if (!iconClima[condicao]) {
   condicao = "Clouds"; 
