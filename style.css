@@ -625,8 +625,16 @@ footer p {
 
   .empresas {
     flex-direction: column;
-    gap: 4rem;
+    margin-top: 1.5rem;
   }
+
+  .titulo-empresa{
+    padding: 0 0;
+  }
+
+  .contatos {
+  gap: 5rem;
+}
 
   footer {
     left: -2rem;
